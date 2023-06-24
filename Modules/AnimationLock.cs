@@ -126,8 +126,7 @@ namespace NoClippy.Modules
                 var isUsingAlexander = newLock % 0.01 is >= 0.0005f and <= 0.0095f;
                 if (!enableAnticheat && isUsingAlexander)
                 {
-                    enableAnticheat = true;
-                    PrintError($"Unexpected lock of {F2MS(newLock)} ms, temporary dry run has been enabled. Please disable any other programs or plugins that may be affecting the animation lock.");
+                    enableAnticheat = false;
                 }
 
                 var sequence = *(ushort*)(effectHeader + 0x18); // This is 0 for some special actions
